@@ -26,12 +26,13 @@ class Circles(QWidget):
 
     @staticmethod
     def draw_circle(qp):
-        diam = random.randrange(1, 361)
-        x = random.randrange(1, 512 - diam)
-        y = random.randrange(1, 361 - diam)
-        qp.setBrush(QColor('yellow'))
-        qp.setPen(QColor('yellow'))
-        qp.drawEllipse(x, y, diam, diam)
+        for _ in range(random.randrange(1, 10)):
+            diam = random.randrange(1, 361)
+            x = random.randrange(1, 512 - diam)
+            y = random.randrange(1, 361 - diam)
+            qp.setBrush(QColor('yellow'))
+            qp.setPen(QColor('yellow'))
+            qp.drawEllipse(x, y, diam, diam)
 
 
 if __name__ == '__main__':
