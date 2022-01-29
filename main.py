@@ -5,11 +5,13 @@ from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QApplication, QWidget
 
+from design import Ui_Form
 
-class Circles(QWidget):
+
+class Circles(QWidget, Ui_Form):
     def __init__(self):
         super(Circles, self).__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.do_paint = False
         self.pushButton.clicked.connect(self.draw)
 
@@ -30,8 +32,9 @@ class Circles(QWidget):
             diam = random.randrange(1, 200)
             x = random.randrange(1, 512 - diam)
             y = random.randrange(1, 361 - diam)
-            qp.setBrush(QColor('yellow'))
-            qp.setPen(QColor('yellow'))
+            color = QColor(*[random.randint(0, 255) for _ in range(3)])
+            qp.setBrush(color)
+            qp.setPen(color)
             qp.drawEllipse(x, y, diam, diam)
 
 
