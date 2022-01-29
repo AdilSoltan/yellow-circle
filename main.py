@@ -27,7 +27,7 @@ class Circles(QWidget):
     @staticmethod
     def draw_circle(qp):
         for _ in range(random.randrange(1, 10)):
-            diam = random.randrange(1, 361)
+            diam = random.randrange(1, 200)
             x = random.randrange(1, 512 - diam)
             y = random.randrange(1, 361 - diam)
             qp.setBrush(QColor('yellow'))
